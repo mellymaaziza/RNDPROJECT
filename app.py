@@ -29,7 +29,7 @@ def get_base64_of_bin_file(bin_file):
 path_foto = os.path.join("assets", "Foto Sepeda Listrik.webp") 
 bin_str = get_base64_of_bin_file(path_foto)
 
-path_logo = os.path.join("assets", "logo.png") 
+path_logo = os.path.join("assets", "Logo.png") 
 logo_str = get_base64_of_bin_file(path_logo)
 
 # --- SISTEM LOGIN REVISI (AESTHETIC & RAPIH) ---
@@ -509,3 +509,4 @@ else:
             st.rerun()
 
     st.markdown("<br><hr><center style='color:white; opacity:0.5;'>Dashboard by R&D Departement Hub © 2026</center>", unsafe_allow_html=True)
+
