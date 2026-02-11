@@ -109,7 +109,7 @@ def login_page():
         with tab_home:
             st.markdown("""
                 <div class='login-box'>
-                    <h3 style='color:white;'>Selamat Datang di Portal Market Intelligence</h3>
+                    <h3 style='color:white;'>Selamat Datang di Website Ar En Dy</h3>
                     <p style='color:#ccc;'>Sistem ini dirancang untuk memantau pergerakan pasar e-bike secara real-time. 
                     Gunakan akun resmi Anda untuk mengakses visualisasi data dan laporan penjualan.</p>
                     <ul style='color:#60a5fa;'>
