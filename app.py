@@ -29,7 +29,7 @@ def get_base64_of_bin_file(bin_file):
 path_foto = os.path.join("assets", "Foto Sepeda Listrik.webp") 
 bin_str = get_base64_of_bin_file(path_foto)
 
-path_logo = os.path.join("assets", "Logo.png") 
+path_logo = os.path.join("assets", "logo.png") 
 logo_str = get_base64_of_bin_file(path_logo)
 
 # --- SISTEM LOGIN REVISI (AESTHETIC & RAPIH) ---
@@ -54,10 +54,18 @@ def login_page():
         .login-title {{
             font-family: 'Inter', sans-serif;
             font-weight: 900;
-            color: white;
-            font-size: 42px;
+            font-size: 52px;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 5px; /* Kurangi margin bawah agar dekat dengan tulisan R&D */
+            
+            /* EFEK GRADASI TEKS */
+            background: linear-gradient(to bottom, #ffffff 40%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* EFEK CAHAYA (GLOW) */
+            filter: drop-shadow(0px 0px 10px rgba(96, 165, 250, 0.5));
+            text-transform: uppercase;
             letter-spacing: -1px;
         }}
         /* Menghilangkan border default streamlit di tabs */
@@ -78,8 +86,8 @@ def login_page():
         
         with tab_login:
             st.markdown("<div class='login-box'>", unsafe_allow_html=True)
-            st.markdown("<div class='login-title'>E-BIKE INTELLIGENCE</div>", unsafe_allow_html=True)
-            
+            st.markdown("<div class='login-title'>E-BIKE MARKET RESEARCH</div>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align:center; color:#ffffff; font-family:\"Poppins\", sans-serif; font-style:normal; font-size:15px; margin-top:-10px; margin-bottom:35px; font-weight:500; letter-spacing:4px; text-shadow: 0px 0px 15px rgba(255,255,255,0.6), 2px 2px 10px rgba(0,0,0,1); text-transform:uppercase;'>by Research & Development</p>", unsafe_allow_html=True)
             user = st.text_input("Username", placeholder="Masukkan ID Anda...")
             pw = st.text_input("Password", type="password", placeholder="••••••••")
             
@@ -115,7 +123,7 @@ def login_page():
         with tab_about:
             st.markdown("""
                 <div class='login-box'>
-                    <h3 style='color:white;'>R&D Departement Hub</h3>
+                    <h3 style='color:white;'>R&D Departement Mantuls</h3>
                     <p style='color:#ccc;'>Versi Dashboard: v2.4.0 (Update 2026)<br>
                     Sistem ini mengintegrasikan data dari berbagai marketplace untuk memberikan gambaran pasar yang akurat.</p>
                 </div>
@@ -499,6 +507,5 @@ else:
         if st.button("🚪 TERMINATE SESSION & LOG OUT", use_container_width=True, type="secondary"):
             st.session_state["logged_in"] = False
             st.rerun()
-
 
     st.markdown("<br><hr><center style='color:white; opacity:0.5;'>Dashboard by R&D Departement Hub © 2026</center>", unsafe_allow_html=True)
